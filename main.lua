@@ -6,7 +6,7 @@
                         |_|  
 Move around and give no fucks about the game being so shitty
 
-Current version: 0.4, changelog in config.lua
+Current version: 0.8, changelog in config.lua
 
 https://github.com/Tanashii/massive-octo-wallhack
 
@@ -14,15 +14,21 @@ https://github.com/Tanashii/massive-octo-wallhack
 --Copyright (c) 2014 Tanashii67, All rights reserved
 --Do not redistribute
 
+--player settings
+hp = 100
+character = "X"
+charsize = 40
+
+require( "mapgenerator" )
 require( "movement" )
+display.setStatusBar( display.HiddenStatusBar )
 
 playerR = {} --making the array for attributes like hp level etc
-player = display.newText( "@", 10, 10, native.systemFont, 40 ) --creating the player sprite
-player.x = 20; player.y = 20; --setting the position of the player
+player = display.newText( character, 10, 10, native.systemFont, charsize ) --creating the player sprite
+player.x = charsize/2; player.y = charsize/2; --setting the position of the player
 playerR["X"] = 1; playerR["Y"] = 1 --setting the coordinates of the player
-playerR[ "hp" ] = 100 --setting the default hp to 100
+playerR[ "hp" ] = hp --setting the default hp to 100
 player.alpha = playerR[ "hp" ] / 100 --making the player fade out as he loses hp
-
 reloadCords()
 
 --making the steering buttons
