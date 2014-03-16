@@ -17,10 +17,23 @@ require( "movement" )
 playerR = {} --making the array for attributes like hp level etc
 player = display.newText( "@", 10, 10, native.systemFont, 40 ) --creating the player sprite
 player.x = 20; player.y = 20; --setting the position of the player
-
 playerR[ "hp" ] = 100 --setting the default hp to 100
-
 player.alpha = playerR[ "hp" ] / 100 --making the player fade out as he loses hp
+
+--making the steering buttons
+leftSteer = display.newRect( 50, 650, 50, 50 ); leftSteer.alpha = 0.1 --left
+rightSteer = display.newRect( 170, 650, 50, 50 ); rightSteer.alpha = 0.1 --right
+upSteer = display.newRect( 110, 590, 50, 50 ); upSteer.alpha = 0.1 --up
+downSteer = display.newRect( 110, 710, 50, 50 ); downSteer.alpha = 0.1 --down
+
+leftSteer:addEventListener( "tap", left1 )
+rightSteer:addEventListener( "tap", right1 )
+upSteer:addEventListener( "tap", up1 )
+downSteer:addEventListener( "tap", down1 )
+
+
+
+
 
 
 
