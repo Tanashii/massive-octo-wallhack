@@ -25,15 +25,4 @@ application =
 	
 }
 
-settings =
-{
-	android = 
-	{
-		versionCode = "11",
-		usesPermissions = 
-		{
-			"android.permission.INTERNET"
-		},
-	},
-}
 
