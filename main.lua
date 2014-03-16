@@ -6,7 +6,9 @@
                         |_|  
 Move around and give no fucks about the game being so shitty
 
-Current version: 0.2, changelog in config.lua
+Current version: 0.4, changelog in config.lua
+
+https://github.com/Tanashii/massive-octo-wallhack
 
 --]]
 --Copyright (c) 2014 Tanashii67, All rights reserved
@@ -17,8 +19,11 @@ require( "movement" )
 playerR = {} --making the array for attributes like hp level etc
 player = display.newText( "@", 10, 10, native.systemFont, 40 ) --creating the player sprite
 player.x = 20; player.y = 20; --setting the position of the player
+playerR["X"] = 1; playerR["Y"] = 1 --setting the coordinates of the player
 playerR[ "hp" ] = 100 --setting the default hp to 100
 player.alpha = playerR[ "hp" ] / 100 --making the player fade out as he loses hp
+
+reloadCords()
 
 --making the steering buttons
 leftSteer = display.newRect( 50, 650, 50, 50 ); leftSteer.alpha = 0.1 --left

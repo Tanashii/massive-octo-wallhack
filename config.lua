@@ -2,8 +2,9 @@
 0.1: Initial release, movement commands not blocking the player from doing 1290384129048 moves
 0.2: Fixed the movement comands allowing the player to do only 20 moves on Y axis and 11 on X
 0.3: Added steering buttons and fixed some stuff
+0.4: Added coordinates
 --]]
-version=0.3
+version=0.4
 
 application =
 {
