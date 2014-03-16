@@ -13,8 +13,6 @@ https://github.com/Tanashii/massive-octo-wallhack
 --Do not redistribute
 
 require("map")
-require("movement")
-require("main")
 
 
 mapObjectX = {}

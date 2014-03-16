@@ -1,7 +1,5 @@
 --Copyright (c) 2014 Tanashii67, All rights reserved
 --Do not redistribute
-require( "main" )
-require( "map" )
 function reloadCords()
 	display.remove(coords)
 	coords = display.newText(getPlayerCoords(0,0),400,30,native.systemFont,30)

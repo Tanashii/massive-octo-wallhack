@@ -7,8 +7,10 @@
 0.6: Added a buggy way of showing tiles
 0.7: Fixed showing tiles
 0.8: Made map easily editable
+1.1: Fixed (probably) app not working on iPhone
+1.2: Fixed android devices' softkey navbar overlaping the steering buttons by raising them 50 pixels
 --]]
-version=0.8
+version=1.2
 
 application =
 {

@@ -6,7 +6,7 @@
                         |_|  
 Move around and give no fucks about the game being so shitty
 
-Current version: 0.8, changelog in config.lua
+Current version: 1.2, changelog in config.lua
 
 https://github.com/Tanashii/massive-octo-wallhack
 
@@ -16,11 +16,12 @@ https://github.com/Tanashii/massive-octo-wallhack
 
 --player settings
 hp = 100
-character = "X"
+character = "@"
 charsize = 40
 
 require( "mapgenerator" )
 require( "movement" )
+require( "map" )
 display.setStatusBar( display.HiddenStatusBar )
 
 playerR = {} --making the array for attributes like hp level etc
@@ -32,10 +33,10 @@ player.alpha = playerR[ "hp" ] / 100 --making the player fade out as he loses hp
 reloadCords()
 
 --making the steering buttons
-leftSteer = display.newRect( 50, 650, 50, 50 ); leftSteer.alpha = 0.1 --left
-rightSteer = display.newRect( 170, 650, 50, 50 ); rightSteer.alpha = 0.1 --right
-upSteer = display.newRect( 110, 590, 50, 50 ); upSteer.alpha = 0.1 --up
-downSteer = display.newRect( 110, 710, 50, 50 ); downSteer.alpha = 0.1 --down
+leftSteer = display.newRect( 50, 600, 50, 50 ); leftSteer.alpha = 0.1 --left
+rightSteer = display.newRect( 170, 600, 50, 50 ); rightSteer.alpha = 0.1 --right
+upSteer = display.newRect( 110, 540, 50, 50 ); upSteer.alpha = 0.1 --up
+downSteer = display.newRect( 110, 660, 50, 50 ); downSteer.alpha = 0.1 --down
 
 leftSteer:addEventListener( "tap", left1 )
 rightSteer:addEventListener( "tap", right1 )
