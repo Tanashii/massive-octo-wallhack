@@ -1,11 +1,11 @@
---Copyright (c) 2014 Tanashii67, All rights reserved
---Do not redistribute
+--> Copyright (c) 2014 Tanashii67, All rights reserved
+--> Do not redistribute
 function reloadCords()
 	display.remove(coords)
 	coords = display.newText(getPlayerCoords(0,0),400,30,native.systemFont,30)
 end
 
-moveRight = function(number) --max 11 moves @ once
+moveRight = function(number) --> max 11 moves @ once
 	print( "Moved Right" )
 	if number == nil then number = 1 end
 	if player.x < 451 and player.x + ( 40 * number ) < 451 then
@@ -21,7 +21,7 @@ moveRight = function(number) --max 11 moves @ once
 	reloadCords()
 end
 
-moveLeft = function(number) --max 11 moves @ once
+moveLeft = function(number) --> max 11 moves @ once
 	print( "Moved Left" )
 	if number == nil then number = 1 end
 	if player.x > 19 and player.x - ( 40 * number ) > 19 then
@@ -37,7 +37,7 @@ moveLeft = function(number) --max 11 moves @ once
 	reloadCords()
 end
 
-moveUp = function(number) --max 20 moves @ once
+moveUp = function(number) --> max 20 moves @ once
 	print( "Moved Up" )
 	if number == nil then number = 1 end
 	if player.y > 19 and player.y - ( 40 * number ) > 19 then
@@ -53,7 +53,7 @@ moveUp = function(number) --max 20 moves @ once
 	reloadCords()
 end
 
-moveDown = function(number) --max 20 moves @ once
+moveDown = function(number) --> max 20 moves @ once
 	print( "Moved Down" )
 	if number == nil then number = 1 end
 	if player.y < 741 and player.y + ( 40 * number ) < 741 then
@@ -67,6 +67,16 @@ moveDown = function(number) --max 20 moves @ once
 		print("Can't move, something is blocking me!")
 	end
 	reloadCords()
+end
+
+function getNpcFromPosition(x, y)
+
+end
+
+function action()
+	if map[getPlayerCoords(1,0)] == "NPC" then
+		
+	end
 end
 
 function down1()
@@ -89,5 +99,3 @@ startpos = charsize/2
 function getPosition(x, y)
 	return (x*charsize)-startpos.."-"..(y*charsize)-startpos
 end
-
-print(getPosition(5, 10))

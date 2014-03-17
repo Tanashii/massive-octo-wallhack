@@ -10,6 +10,7 @@
 1.1: Fixed (probably) app not working on iPhone
 1.2: Fixed android devices' softkey navbar overlaping the steering buttons by raising them 50 pixels
 1.3: Added text dialogues
+1.4: Added green background color, made the buttons lighter and changed the getTold( ) ui. 
 --]]
 version=1.2
 
@@ -18,8 +19,8 @@ application =
 	content =
 	{
 		fps = 60,
-		width = 430,
-		height = 704,
+		width = 435,
+		height = 775,
 		scale = "letterbox",
 		xAlign = "left",
 		yAlign = "top",

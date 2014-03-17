@@ -15,8 +15,8 @@ map["X-Y"] = <char or space>
 https://github.com/Tanashii/massive-octo-wallhack
 
 --]]
---Copyright (c) 2014 Tanashii67, All rights reserved
---Do not redistribute
+--> Copyright (c) 2014 Tanashii67, All rights reserved
+--> Do not redistribute
 
 --[[
 
@@ -43,7 +43,7 @@ the map looks like this:
 
 --]]
 
-map = {} --setting the map array
+map = {} --> setting the map array
 map["6-7"] = "[ ]"
 map["6-8"] = "[ ]"
 map["6-9"] = "[ ]"
@@ -55,4 +55,16 @@ map["4-9"] = "[ ]"
 map["8-8"] = "[ ]"
 map["8-9"] = "[ ]"
 map["8-6"] = "[ ]"
+
+
+map["8-13"] = "NPC"
+
+npcJoe = {}
+
+npcPosition = {}
+
+npcJoe["name"] = "Joe"
+npcJoe["pos"] = "8-13"
+npcPosition["Joe"] = "8-13"
+npcJoe["text"] = "You have been told."
 
