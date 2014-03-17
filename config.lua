@@ -9,6 +9,7 @@
 0.8: Made map easily editable
 1.1: Fixed (probably) app not working on iPhone
 1.2: Fixed android devices' softkey navbar overlaping the steering buttons by raising them 50 pixels
+1.3: Added text dialogues
 --]]
 version=1.2
 

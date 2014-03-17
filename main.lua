@@ -6,7 +6,7 @@
                         |_|  
 Move around and give no fucks about the game being so shitty
 
-Current version: 1.2, changelog in config.lua
+Current version: 1.3, changelog in config.lua
 
 https://github.com/Tanashii/massive-octo-wallhack
 
@@ -42,6 +42,36 @@ leftSteer:addEventListener( "tap", left1 )
 rightSteer:addEventListener( "tap", right1 )
 upSteer:addEventListener( "tap", up1 )
 downSteer:addEventListener( "tap", down1 )
+
+function exitTold()
+	display.remove(wdwScreen)
+	display.remove(txtScreen)
+	display.remove(btnScreen)
+	display.remove(txtButtonScreen)
+
+	leftSteer.alpha=0.1
+	rightSteer.alpha=0.1
+	upSteer.alpha=0.1
+	downSteer.alpha=0.1
+end
+
+function getTold(string)
+	leftSteer.alpha = 0.0
+	rightSteer.alpha = 0.0
+	upSteer.alpha = 0.0
+	downSteer.alpha = 0.0
+
+	wdwScreen = display.newRect( display.contentWidth/2, 700, display.contentWidth, 300 )
+	wdwScreen:setFillColor( 0.5,0.5,0.5 )
+	txtScreen = display.newText(string, display.contentWidth/2, 600, native.systemFont, 30)
+
+	btnScreen = display.newRect( display.contentWidth/2, 700, 300, 100)
+	btnScreen:setFillColor( 0,0,0)
+	txtButtonScreen = display.newText( "K", display.contentWidth/2, 700, native.systemFont, 40)
+
+	btnScreen:addEventListener( "tap", exitTold )
+
+end
 
 
 
