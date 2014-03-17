@@ -11,8 +11,10 @@
 1.2: Fixed android devices' softkey navbar overlaping the steering buttons by raising them 50 pixels
 1.3: Added text dialogues
 1.4: Added green background color, made the buttons lighter and changed the getTold( ) ui. 
+1.5: Added NPCs and a very simple way of adding them to the map, also fixed the getTold( ) ui a bit more.
+
 --]]
-version=1.2
+version=1.5
 
 application =
 {

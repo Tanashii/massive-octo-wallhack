@@ -6,7 +6,7 @@
                         |_|  
 Move around and give no fucks about the game being so shitty
 
-Current version: 1.4, changelog in config.lua
+Current version: 1.5, changelog in config.lua
 
 https://github.com/Tanashii/massive-octo-wallhack
 
@@ -16,6 +16,7 @@ https://github.com/Tanashii/massive-octo-wallhack
 
 
 --> MAKING THE BACKGROUND BEFORE EVERYTHING
+beenTold = 0
 bgGrass = display.newRect( display.contentWidth/2, display.contentHeight/2, display.contentWidth, display.contentHeight )
 bgGrass:setFillColor( 0.0392156862745098,0.5215686274509804,0 )
 --> player settings
@@ -53,15 +54,18 @@ downSteer:addEventListener( "tap", down1 )
 btnAction:addEventListener( "tap", action )
 
 function exitTold()
-	display.remove(wdwScreen)
+	wdwScreen.alpha = 0.0
+	--txtScreen.alpha = 0.0
 	display.remove(txtScreen)
-	display.remove(btnScreen)
-	display.remove(txtButtonScreen)
+	btnScreen.alpha = 0.0
+	txtButtonScreen.alpha = 0.0
+
 
 	leftSteer.alpha=btnAlpha
 	rightSteer.alpha=btnAlpha
 	upSteer.alpha=btnAlpha
 	downSteer.alpha=btnAlpha
+	btnAction.alpha = btnAlpha
 end
 
 function getTold(string)
@@ -69,21 +73,29 @@ function getTold(string)
 	rightSteer.alpha = 0.0
 	upSteer.alpha = 0.0
 	downSteer.alpha = 0.0
+	btnAction.alpha = 0.0
 
-	wdwScreen = display.newRect( display.contentWidth/2, 700, display.contentWidth, 300 )
-	wdwScreen:setFillColor( 0,0,0 )
-	txtScreen = display.newText(string, display.contentWidth/2, 615, native.systemFont, 30)
-	txtScreen:setFillColor( 1,1,1 )
+	if beenTold == 0 then
+		wdwScreen = display.newRect( display.contentWidth/2, 700, display.contentWidth, 300 )
+		wdwScreen:setFillColor( 0,0,0 )
+		txtScreen = display.newText(string, display.contentWidth/2, 615, native.systemFont, 30)
+		txtScreen:setFillColor( 1,1,1 )
 
-	btnScreen = display.newRect( display.contentWidth/2, 720, 200, 75)
-	btnScreen:setFillColor( 1,1,1)
-	txtButtonScreen = display.newText( "K", display.contentWidth/2, btnScreen.y, native.systemFont, 40)
-	txtButtonScreen:setFillColor( 0,0,0 )
-	btnScreen:addEventListener( "tap", exitTold )
+		btnScreen = display.newRect( display.contentWidth/2, 720, 200, 75)
+		btnScreen:setFillColor( 1,1,1)
+		txtButtonScreen = display.newText( "K", display.contentWidth/2, btnScreen.y, native.systemFont, 40)
+		txtButtonScreen:setFillColor( 0,0,0 )
+		btnScreen:addEventListener( "tap", exitTold )
 
+		beenTold = 1
+	else
+		wdwScreen.alpha = 1
+		txtScreen = display.newText(string, display.contentWidth/2, 615, native.systemFont, 30)
+		txtScreen:setFillColor( 1,1,1 )
+		btnScreen.alpha = 1
+		txtButtonScreen.alpha = 1
+	end
 end
-
-getTold("Hello there, adventurer!")
 
 
 

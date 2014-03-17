@@ -58,13 +58,16 @@ map["8-6"] = "[ ]"
 
 
 map["8-13"] = "NPC"
+map["5-19"] = "NPC"
 
-npcJoe = {}
+npcNameOnPos = {}
+npcText = {}
+npcHealth = {}
 
-npcPosition = {}
+npcNameOnPos["8-13"] = "Joe"
+npcText["Joe"] = "You have been told."
+npcHealth["Joe"] = math.pi
 
-npcJoe["name"] = "Joe"
-npcJoe["pos"] = "8-13"
-npcPosition["Joe"] = "8-13"
-npcJoe["text"] = "You have been told."
-
+npcNameOnPos["5-19"] = "Matt"
+npcText["Matt"] = "You've gone a long ways,\nadventurer."
+npcHealth["Matt"] = npcHealth["Joe"]

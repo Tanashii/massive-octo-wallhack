@@ -70,13 +70,31 @@ moveDown = function(number) --> max 20 moves @ once
 end
 
 function getNpcFromPosition(x, y)
-
+	return npcNameOnPos[x.."-"..y]
 end
 
 function action()
 	if map[getPlayerCoords(1,0)] == "NPC" then
-		
+		local npcsName = getNpcFromPosition(playerR["X"]+1, playerR["Y"])
+		print("Found "..npcsName)
+		getTold(npcText[npcsName])
+	elseif
+	map[getPlayerCoords(-1,0)] == "NPC" then
+		local npcsName = getNpcFromPosition(playerR["X"]-1, playerR["Y"])
+		print("Found "..npcsName)
+		getTold(npcText[npcsName])
+	elseif
+	map[getPlayerCoords(0,1)] == "NPC" then
+		local npcsName = getNpcFromPosition(playerR["X"], playerR["Y"]+1)
+		print("Found "..npcsName)
+		getTold(npcText[npcsName])
+	elseif
+	map[getPlayerCoords(0,-1)] == "NPC" then
+		local npcsName = getNpcFromPosition(playerR["X"], playerR["Y"]-1)
+		print("Found "..npcsName)
+		getTold(npcText[npcsName])
 	end
+
 end
 
 function down1()
@@ -99,3 +117,5 @@ startpos = charsize/2
 function getPosition(x, y)
 	return (x*charsize)-startpos.."-"..(y*charsize)-startpos
 end
+
+print(getNpcFromPosition(8,13))
